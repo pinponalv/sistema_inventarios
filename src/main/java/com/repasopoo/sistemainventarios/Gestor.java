@@ -58,6 +58,9 @@ public class Gestor {
     }
     
     
+    //Proveedoresaaaaaaaaaaa
+    
+    
     //Realizar pedidos
     public boolean realizarPedido(Customers cliente, String nombreProducto, int cantidad){
         for(Products producto : inventario){
