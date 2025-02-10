@@ -3,6 +3,8 @@ package com.repasopoo.sistemainventarios;
 public class SistemaInventarios {
 
     public static void main(String[] args) {
+        Customers cliente = new Customers(1, "Juancho");
+        Customers cliente2 = new Customers(2, "Oscar");
         Gestor gstr = new Gestor();
         Products prdct1 = new Products(1, "RTX 4090", 10, 500);
         Products prdct2 = new Products(2, "Intel Core i9-13900K", 15, 600);
@@ -15,6 +17,9 @@ public class SistemaInventarios {
         Products prdct9 = new Products(9, "Lian Li PC-O11 Dynamic", 10, 160);
         Products prdct10 = new Products(10, "Noctua NH-D15", 14, 100);
 
+        //proveedores
+        Suppliers suppli1 = new Suppliers(1, "Intel-Jose Alfredo", "Procesadores intel", "66665482");
+        Suppliers suppli2 = new Suppliers(2, "Nvidia-Juan Gomez", "Graficas", "8656486");
 
         gstr.agregarProductos(prdct1);
         gstr.agregarProductos(prdct2);
@@ -28,7 +33,19 @@ public class SistemaInventarios {
         gstr.agregarProductos(prdct10);
         
         
+        gstr.agregarProveedor(suppli1);
+        gstr.agregarProveedor(suppli2);
+        
+        
         gstr.listarProductos();
+        gstr.listarProveedores();
+        
+        gstr.eliminarProveedor(2);
+        gstr.listarProveedores();
+        
+        
+        gstr.realizarPedido(cliente, "rtx 4090", 10);
+        gstr.realizarPedido(cliente2, "rtx 4090", 1);
         
     }
 }

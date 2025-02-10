@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class Gestor {
     //Uso linkedList porque es mejor para realizar operaciones frecuentes
     private LinkedList<Products> inventario = new LinkedList<>();
+    private LinkedList<Suppliers> proveedores = new LinkedList<>();
     
     
     
@@ -59,7 +60,43 @@ public class Gestor {
     
     
     //Proveedoresaaaaaaaaaaa
+    //agregando proveedores
+    public void agregarProveedor(Suppliers suppliers){
+        proveedores.add(suppliers);
+    }
     
+    //eliminando proveedores
+    public void eliminarProveedor(int proveedorid){
+        
+        
+        Suppliers suppli = null;
+        
+        //si algun objeto de suppliers existen en mi lista proveedores la recorre
+        for(Suppliers su : proveedores){
+            //si el id es igual a mi id que le paso lo asigna a suppli
+            if(su.getProveedorid() == proveedorid){
+                suppli = su;
+            }
+        }
+        
+        //si es diferente de null remueve el registro
+        if(suppli != null){
+            //borra de la lista el registro con ese id
+            proveedores.remove(suppli);
+            System.out.println("Proveedor con id#" + proveedorid + " elimindo.");
+        }else{
+            System.out.println("Proveedor con id#" + proveedorid + " no se encontro.");
+        }
+        
+    }
+    
+    //listando proveedores
+    public void listarProveedores(){
+        System.out.println("---Lista Proveedores---");
+        for(Suppliers su: proveedores){
+            System.out.println("Proveedores: " + su);
+        }
+    }
     
     //Realizar pedidos
     public boolean realizarPedido(Customers cliente, String nombreProducto, int cantidad){

@@ -1,15 +1,35 @@
 package com.repasopoo.sistemainventarios;
 
 public class Suppliers {
+    private int proveedorid;
+    private String nombreProveedor;
     private String productsName;
     private String contact;
 
     public Suppliers() {
     }
 
-    public Suppliers(String productsName, String contact) {
+    public Suppliers(int proveedorid, String nombreProveedor, String productsName, String contact) {
+        this.proveedorid = proveedorid;
+        this.nombreProveedor = nombreProveedor;
         this.productsName = productsName;
         this.contact = contact;
+    }
+
+    public int getProveedorid() {
+        return proveedorid;
+    }
+
+    public void setProveedorid(int proveedorid) {
+        this.proveedorid = proveedorid;
+    }
+
+    public String getNombreProveedor() {
+        return nombreProveedor;
+    }
+
+    public void setNombreProveedor(String nombreProveedor) {
+        this.nombreProveedor = nombreProveedor;
     }
 
     public String getProductsName() {
@@ -30,8 +50,10 @@ public class Suppliers {
 
     @Override
     public String toString() {
-        return "Suppliers{" + "productsName=" + productsName + ", contact=" + contact + '}';
+        return "Suppliers{" + "proveedorid=" + proveedorid + ", nombreProveedor=" + nombreProveedor + ", productsName=" + productsName + ", contact=" + contact + '}';
     }
+
+    
     
     
 }
